@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Make_Sample extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Make
+ * @package        Make_Sample
+ * @copyright      Copyright (c) 2018
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_sample_mysample_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>make_sample/mysample</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="make_sample/adminhtml_mysample" name="mysample" />
+
+        </reference>
+    </adminhtml_sample_mysample_index>
+    <adminhtml_sample_mysample_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="make_sample/adminhtml_mysample_grid" name="mysample_grid"/>
+        </block>
+    </adminhtml_sample_mysample_grid>
+    <!-- Mysample add/edit action -->
+    <adminhtml_sample_mysample_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>make_sample/mysample</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="make_sample/adminhtml_mysample_edit" name="mysample_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="make_sample/adminhtml_mysample_edit_tabs" name="mysample_tabs"></block>
+        </reference>
+    </adminhtml_sample_mysample_edit>
+
+</layout>

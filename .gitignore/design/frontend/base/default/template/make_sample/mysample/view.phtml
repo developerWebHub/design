@@ -1,0 +1,42 @@
+<?php
+/**
+ * Make_Sample extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Make
+ * @package        Make_Sample
+ * @copyright      Copyright (c) 2018
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Mysample view template
+ *
+ * @category    Make
+ * @package     Make_Sample
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_mysample = $this->getCurrentMysample();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title mysample-title">
+    <h1><?php echo $_mysample->getTitle(); ?></h1>
+</div>
+<div class="mysample-view">
+    <div class="mysample-title">
+        <?php echo Mage::helper('make_sample')->__('Title');?>:<?php echo $_mysample->getTitle();?>
+
+    </div>
+    <div class="mysample-image">
+        <?php if ($_mysample->getImage()) :?>
+    <img src="<?php echo Mage::helper('make_sample/mysample_image')->init($_mysample, 'image')->resize(75);?>" alt="<?php echo $this->escapeHtml($_mysample->getTitle());?>" />
+<?php endif;?>
+
+    </div>
+
+</div>

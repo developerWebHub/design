@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Make_Sample extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Make
+ * @package        Make_Sample
+ * @copyright      Copyright (c) 2018
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    
+    <make_sample_mysample_index translate="label" module="make_sample">
+        <label>Mysamples list</label>
+        <update handle="page_one_column" />
+        <reference name="content">
+            <block type="make_sample/mysample_list" name="mysample_list" template="make_sample/mysample/list.phtml" />
+        </reference>
+    </make_sample_mysample_index>
+    <make_sample_mysample_view translate="label" module="make_sample">
+        <label>Mysample view page</label>
+        <update handle="page_one_column" />
+        <reference name="content">
+            <block type="make_sample/mysample_view" name="mysample_view" template="make_sample/mysample/view.phtml" />
+        </reference>
+    </make_sample_mysample_view>
+</layout>
